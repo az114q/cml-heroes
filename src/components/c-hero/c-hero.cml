@@ -1,0 +1,61 @@
+<template>
+ <view>{{heroIdx + 1}}: {{heroName}}</view>
+</template>
+
+<script>
+
+class HeroComponent {
+  props = {
+    heroIdx:{
+      type: Number,
+      default: 0
+    },
+    heroName: {
+      type: String,
+      default: ''
+    }
+  }
+
+  data = {
+  }
+
+  computed = {
+  }
+
+  watch  = {
+  }
+
+  methods = {
+  }
+
+  beforeCreate() {
+  }
+
+  created() {
+  }
+
+  beforeMount() {
+  }
+
+  mounted() {
+  }
+
+  beforeDestroy() {
+  }
+
+  destroyed() {
+  }
+}
+
+export default new HeroComponent();
+</script>
+<style>
+
+</style>
+<script cml-type="json">
+{
+  "base": {
+    "usingComponents": {}
+  }
+}
+</script>

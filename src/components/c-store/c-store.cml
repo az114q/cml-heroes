@@ -1,0 +1,76 @@
+<template>
+  <view class="edit-wrap">
+  <input  placeholder='请输入英雄的名称' 
+  focus="{{true}}"
+   c-model="{{heroName}}"
+    c-bind:blur="editHero"></input>
+     <button type="blue" text="确定" class="btn"> 
+   </button>
+  </view>
+</template>
+
+<script>
+
+class StoreComponent {
+  props = {
+
+  }
+
+  data = {
+    heroName: ''
+  }
+
+  computed = {
+  }
+
+  watch  = {
+  }
+
+  methods = {
+    editHero() {
+      if(!this.heroName) {
+        return;
+      }
+      this.$cmlEmit('editHero', {value: this.heroName})
+      this.heroName = '';
+    }
+  }
+
+  beforeCreate() {
+  }
+
+  created() {
+  }
+
+  beforeMount() {
+  }
+
+  mounted() {
+  }
+
+  beforeDestroy() {
+  }
+
+  destroyed() {
+  }
+}
+
+export default new StoreComponent();
+</script>
+<style>
+  .edit-wrap {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .btn {
+    margin-left: 10px;
+  }
+</style>
+<script cml-type="json">
+{
+  "base": {
+    "usingComponents": {}
+  }
+}
+</script>
