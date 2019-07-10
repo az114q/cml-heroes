@@ -1,54 +1,54 @@
 <template>
-  <page title="chameleon">
-      <view class="content-wrap">
-      <view>请创建您的英雄：</view>
-      <view>
-        <c-stroe c-bind:editHero="editHero"></c-stroe>
-      </view>
-      <scroller height="{{500}}">
-        <view class="scroller-wrap">
-          <view class="hero-wrap"  c-for="{{heroes}}" c-for-index="idx" c-for-item="heroName">
-            <c-hero heroIdx="{{idx}}" heroName="{{heroName}}"></c-hero>
-             <image src="{{closeImg}}" style="width:30cpx;height:30cpx;margin-left: 30cpx;"  c-bind:tap="delete(idx)"/>
-          </view>
+<page title="chameleon">
+  <view class="content-wrap">
+    <view>
+      <text>请创建您的英雄：</text>
+    </view>
+    <view>
+      <c-stroe c-bind:editHero="editHero"></c-stroe>
+    </view>
+    <scroller height="{{500}}">
+      <view class="scroller-wrap">
+        <view class="hero-wrap" c-for="{{heroes}}" c-for-index="idx" c-for-item="heroName">
+          <c-hero heroIdx="{{idx}}" heroName="{{heroName}}"></c-hero>
+          <image src="{{closeImg}}" style="width:30cpx;height:30cpx;margin-left: 30cpx;" c-bind:tap="delete(idx)" />
         </view>
-      </scroller>
       </view>
-  </page>
+    </scroller>
+  </view>
+</page>
 </template>
 
 <script>
-
-class Index  {
+class Index {
   data = {
     title: "chameleon",
     chameleonSrc: require('../../assets/images/chameleon.png'),
-    heroes: ['钢铁侠', '蜘蛛侠', '绿巨人', '黑豹','鹰眼'],
-     closeImg: require('../../assets/images/close.png')
+    heroes: ['钢铁侠', '蜘蛛侠', '绿巨人', '黑豹', '鹰眼'],
+    closeImg: require('../../assets/images/close.png')
   }
 
   methods = {
-   editHero(...args) {
-     const hero = args[0].detail.value;
-    this.heroes = [...this.heroes, hero]
-   },
-   delete(idx) {
-     this.heroes.splice(idx, 1);
-   } 
+    editHero(...args) {
+      const hero = args[0].detail.value;
+      this.heroes = [...this.heroes, hero]
+    },
+    delete(idx) {
+      this.heroes.splice(idx, 1);
+    }
   }
 }
 
 export default new Index();
-
 </script>
 <style>
-
 .content-wrap {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding:20px 0 0 20px;
+  padding: 20cpx 0 0 20cpx;
 }
+
 .hero-wrap {
   display: flex;
   flex-direction: row;
@@ -57,31 +57,31 @@ export default new Index();
 </style>
 <script cml-type="json">
 {
-  "base": {
-    "usingComponents": {
-      "c-hero": "/components/c-hero/c-hero",
-      "c-stroe": "/components/c-store/c-store"
-    }
-  },
-  "wx": {
-    "navigationBarTitleText": "index",
-    "backgroundTextStyle": "dark",
-    "backgroundColor": "#E2E2E2"
-  },
-  "alipay": {
-    "defaultTitle": "index",
-    "pullRefresh": false,
-    "allowsBounceVertical": "YES",
-    "titleBarColor": "#ffffff"
-  },
-  "baidu": {
-    "navigationBarBackgroundColor": "#ffffff",
-    "navigationBarTextStyle": "white",
-    "navigationBarTitleText": "index",
-    "backgroundColor": "#ffffff",
-    "backgroundTextStyle": "dark",
-    "enablePullDownRefresh": false,
-    "onReachBottomDistance": 50
-  }
+		"base": {
+				"usingComponents": {
+						"c-hero": "/components/c-hero/c-hero",
+						"c-stroe": "/components/c-store/c-store"
+				}
+		},
+		"wx": {
+				"navigationBarTitleText": "index",
+				"backgroundTextStyle": "dark",
+				"backgroundColor": "#E2E2E2"
+		},
+		"alipay": {
+				"defaultTitle": "index",
+				"pullRefresh": false,
+				"allowsBounceVertical": "YES",
+				"titleBarColor": "#ffffff"
+		},
+		"baidu": {
+				"navigationBarBackgroundColor": "#ffffff",
+				"navigationBarTextStyle": "white",
+				"navigationBarTitleText": "index",
+				"backgroundColor": "#ffffff",
+				"backgroundTextStyle": "dark",
+				"enablePullDownRefresh": false,
+				"onReachBottomDistance": 50
+		}
 }
 </script>

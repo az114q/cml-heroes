@@ -1,5 +1,5 @@
 <template>
-  <app store="{{store}}" router-config="{{routerConfig}}"></app>
+<app store="{{store}}" router-config="{{routerConfig}}"></app>
 </template>
 
 <script>
@@ -11,8 +11,7 @@ class App {
     store,
     routerConfig
   }
-  created(res) {
-  }
+  created(res) {}
 }
 
 export default new App();
@@ -24,26 +23,26 @@ export default new App();
 
 <script cml-type="json">
 {
-  "wx": {
-    "window": {
-      "backgroundTextStyle":"light",
-      "navigationBarBackgroundColor": "#fff",
-      "navigationBarTitleText": "Chameleon",
-      "navigationBarTextStyle":"black"
-    }
-  },
-  "baidu": {
-    "window": {
-      "backgroundTextStyle": "light",
-      "navigationBarBackgroundColor": "#ffffff",
-      "navigationBarTitleText": "Chameleon",
-      "navigationBarTextStyle": "black"
-    }
-  },
-  "alipay": {
-      "window": {
-        "defaultTitle": "Chameleon"
-      }
-  }
+		"wx": {
+				"window": {
+						"backgroundTextStyle": "light",
+						"navigationBarBackgroundColor": "#fff",
+						"navigationBarTitleText": "Chameleon",
+						"navigationBarTextStyle": "black"
+				}
+		},
+		"baidu": {
+				"window": {
+						"backgroundTextStyle": "light",
+						"navigationBarBackgroundColor": "#ffffff",
+						"navigationBarTitleText": "Chameleon",
+						"navigationBarTextStyle": "black"
+				}
+		},
+		"alipay": {
+				"window": {
+						"defaultTitle": "Chameleon"
+				}
+		}
 }
 </script>
